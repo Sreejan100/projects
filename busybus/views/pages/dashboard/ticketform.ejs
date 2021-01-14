@@ -1,0 +1,76 @@
+<div id="ticketform" v-cloak>
+  <div class="container" v-if="!cloudSuccess">
+    <h1 class="text-center">Step 2:Fill up the ticket </h1>
+    <p class="text-center">Fill up these form to proceed for the last Step</p>
+    <div class=" signup-form">
+      <hr/>
+        <ajax-form action="ticketform" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+          <div class="form-group">
+            <label for="Name">Full Name</label>
+            <input class="form-control" id="name" type="text"  :class="[formErrors.name ? 'is-invalid' : '']" v-model.trim="formData.name" placeholder="Ryan Dahl" autocomplete="name" >
+            <div class="invalid-feedback" v-if="formErrors.name">Please enter your full Name.</div>
+          </div>
+          <div class="form-group">
+            <label for="Source">Source</label>
+           <input class="form-control" id="source" type="text"  :class="[formErrors.source ? 'is-invalid' : '']" v-model.trim="formData.source" placeholder="Kolkata" autocomplete="new-source">
+            <div class="invalid-feedback" v-if="formErrors.source">Please enter your Source.</div>
+          </div>
+        <div class="form-group">
+          <label for="Destination">Destination</label>
+          <input class="form-control" id="destination" type="text"  :class="[formErrors.destination ? 'is-invalid' : '']" v-model.trim="formData.destination" placeholder="Mumbai" autocomplete="new-destination">
+          <div class="invalid-feedback" v-if="formErrors.destination">Please enter your destination.</div>
+        </div>
+        <div class="form-group">
+          <label for="Journey-Date">Journey Date</label>
+          <input class="form-control" id="journey_date" type="text"  :class="[formErrors.journey_date ? 'is-invalid' : '']" v-model.trim="formData.journey_date" placeholder="2-4-2020" autocomplete="new-journey_date">
+          <div class="invalid-feedback" v-if="formErrors.journey_date">Please enter your journey date.</div>
+        </div>
+        <div class="form-group">
+          <label for="Departure_time">Departure Time</label>
+          <input class="form-control" id="departure_time" type="text"  :class="[formErrors.departure_time ? 'is-invalid' : '']" v-model.trim="formData.departure_time" placeholder="11:00am" autocomplete="new-departure_time">
+          <div class="invalid-feedback" v-if="formErrors.departure_time">Please enter your departure_time.</div>
+        </div>
+        <div class="form-group">
+          <label for="Age">Age</label>
+          <input class="form-control" id="age" type="number"  :class="[formErrors.age ? 'is-invalid' : '']" v-model.trim="formData.age" placeholder="20" autocomplete="new-age">
+          <div class="invalid-feedback" v-if="formErrors.age">Enter your age.</div>
+        </div>
+        <div class="form-group">
+          <label for="Ticket Number">Ticket Number</label>
+          <input class="form-control" id="ticket_no" type="number"  :class="[formErrors.ticket_no ? 'is-invalid' : '']" v-model.trim="formData.ticket_no" placeholder="1" autocomplete="new-ticket_no">
+          <div class="invalid-feedback" v-if="formErrors.ticket_no">Please enter your Ticket Number.</div>
+        </div>
+        <div class="form-group">
+          <label for="Number of seats">Number of Seats</label>
+          <input class="form-control" id="no_of_seats" type="number"  :class="[formErrors.no_of_seats ? 'is-invalid' : '']" v-model.trim="formData.no_of_seats" placeholder="1" autocomplete="new-no_of_seats">
+          <div class="invalid-feedback" v-if="formErrors.no_of_seats">Please enter your Ticket Number.</div>
+        </div>
+        <div class="form-group">
+          <label for="Bus Number">Bus Number</label>
+          <input class="form-control" id="busno" type="number"  :class="[formErrors.busno ? 'is-invalid' : '']" v-model.trim="formData.busno" placeholder="1" autocomplete="new-busno">
+          <div class="invalid-feedback" v-if="formErrors.busno">Please enter your Bus Number.</div>
+        </div>
+        <div class="form-group form-check">
+          <input class="form-check-input" id="terms-agreement" type="checkbox" v-model="formData.agreed">
+          <label for="terms-agreement" class="form-check-label" :class="[formErrors.agreed ? 'text-danger' : '']">I have read &amp; agree to the <a target="_blank" href="/terms">terms of service</a>.</label>
+        </div>
+        <p class="text-danger" v-if="cloudError==='emailAlreadyInUse'"><small>Ticket already booked <a href="password/forgot">here</a>.</small></p>
+        <p class="text-danger" v-else-if="cloudError"><small>An error occured while processing your request. Please check your information and try again, or <a href="/support">contact support</a> if the error persists.</small></p>
+        <div class="form-group">
+          <ajax-button type="submit" :syncing="syncing" class="btn-dark btn-lg btn-block">Book</ajax-button>
+        </div>
+      </ajax-form>
+    </div>
+  </div>
+  <div class="container" v-if="cloudSuccess"> 
+    <h1 class="text-center">Complete your last step!</h1>
+     <div class="success-message"> 
+       <hr/>
+       <p>Just one more step remaining complete it to confirm your ticket.</p> 
+       <p><a class="btn btn-outline-info" href="/passengerform">Last step</a></p> 
+     </div> 
+   </div> 
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>

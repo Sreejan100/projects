@@ -1,0 +1,46 @@
+<div id='newbuses'>
+    <div class='container'>
+        <h1 style="color:#ffa07a;">Your Ticket</h1>
+        <div class='about-wrapper newzealand'>
+            <table class="table table-striped">
+             <thead>
+               <tr>
+                <th>busno</th>
+                <th>Name</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Journey Date</th>
+                <th>Departure Time</th>
+                <th>Age</th>
+                <th>Number of Seats</th>
+              </tr>
+           </thead>
+            <tbody>
+                <% articles.forEach(function(article){ %>
+                <tr>
+                    <td><%= article.busno %></td>
+                    <td><%= article.name %></td>
+                    <td><%= article.source %></td>
+                    <td><%= article.destination %></td>
+                    <td><%= article.journey_date %></td>
+                    <td><%= article.departure_time %></td>
+                    <td><%= article.age %></td>
+                    <td><%= article.no_of_seats %></td>
+                </tr>
+            <% }) %>
+  <!--           <% for(var prop in articles){ %>
+                   <tr>
+                       <td><%= prop.busno %></td>
+                       <td><%= prop.country %></td>
+                       <td><%= prop.source %></td>
+                       <td><%= prop.destination %></td>
+                       <td><%= prop.date %></td>
+                       <td><%= prop.time %></td>
+                       <td><%= prop.number_of_seats %></td>
+                   </tr>
+             <% } %> -->
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

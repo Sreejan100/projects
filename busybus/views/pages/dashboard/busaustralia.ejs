@@ -1,0 +1,50 @@
+<div id="australiabuses">
+    <div class="container">
+        <h1 style="color: #ffa07a;">BusyBus(Australia)</h1>
+        <div class="about-wrapper australia">
+          <table class="table table-striped">
+           <thead>
+            <tr>
+                <th>busno</th>
+                <th>Country</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Number of Seats</th>
+            </tr>
+           </thead>
+           <tbody>
+
+            <% articles.forEach(function(article){ %>
+                <tr>
+                    <td><%= article.busno %></td>
+                    <td><%= article.country %></td>
+                    <td><%= article.source %></td>
+                    <td><%= article.destination %></td>
+                    <td><%= article.date %></td>
+                    <td><%= article.time %></td>
+                    <td><%= article.no_of_seats %></td>
+                </tr>
+            <% }) %>
+  <!--           <% for(var prop in articles){ %>
+                   <tr>
+                       <td><%= prop.busno %></td>
+                       <td><%= prop.country %></td>
+                       <td><%= prop.source %></td>
+                       <td><%= prop.destination %></td>
+                       <td><%= prop.date %></td>
+                       <td><%= prop.time %></td>
+                       <td><%= prop.number_of_seats %></td>
+                   </tr>
+             <% } %> -->
+            </tbody>
+          </table>
+        </div>
+        <div class="row ticket-button">
+            <button type="button" id="butto1" class="btn btn-primary"><a href="/cancellation">Cancel Ticket</a></button>
+            <button type="button" id="butto2" class="btn btn-primary">View Ticket</button>
+            <button type="button" id="butto3" class="btn btn-primary"><a href="/reservation">Book Ticket</a></button>
+        </div>
+    </div>
+</div>
