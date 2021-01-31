@@ -1,0 +1,45 @@
+
+.image__slider{
+   color: #fff;
+}
+
+.head__tag{
+    position: absolute;
+    left:30px;
+}
+
+.card__wrapper{
+   position: relative;
+   top:90px;
+   left: 30px;
+   width:100%;
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+
+.card__wrapper:hover{
+    transition: 5s ease-in-out;
+}
+
+.card{
+    width: 100%;
+    height:450px;
+    border-radius:16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.card__image > img{
+    
+        widows: 100%;
+        height: 100%;
+        object-fit: cover;
+
+}
+
+.card__image > img::hover{
+    opacity: .4;
+    transition: .5s;
+}

@@ -1,0 +1,37 @@
+.header{
+
+    display: flex;
+    /* background-color:transparent; */
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    margin:15px;
+    margin-top:15px;
+    z-index:100;
+    
+}
+
+.logo__image{
+    height:5px;
+    width:100px;
+    margin-top: 15px;
+}
+
+.middle__items{
+
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+.middle__items>p{
+    margin: 10px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.search{
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 300px;
+}

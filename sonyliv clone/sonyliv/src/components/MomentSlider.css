@@ -1,0 +1,29 @@
+.moment{
+    margin-top:30px;
+    color:#fff;
+}
+
+.card__wrapper{
+    position:relative;
+    top:90px;
+    left:30px;
+    width:100%;
+    padding:0 10px;
+    box-sizing: border-box;
+}
+
+.card{
+    width: 100%;
+    height:450px;
+    border-radius:16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+.card__image > img{
+    
+    widows: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
