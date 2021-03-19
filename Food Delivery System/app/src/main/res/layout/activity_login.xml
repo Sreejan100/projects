@@ -15,13 +15,14 @@
        android:textColor="#000"
        android:textSize="36dp"
        android:layout_marginLeft="30dp"
-       android:textFontWeight="12p"/>
+       />
 
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="331dp"
         android:layout_height="70dp"
-        android:hint="User Name"
+        android:hint="Email"
         android:padding="16dp"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="32dp"
@@ -29,6 +30,7 @@
         />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="331dp"
         android:layout_height="70dp"
         android:hint="Password"
@@ -40,6 +42,7 @@
 
     <Button
         android:layout_width="325dp"
+        android:id="@+id/loginbutton"
         android:layout_height="72dp"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="32dp"
@@ -48,7 +51,32 @@
         android:background="@drawable/button"
         android:textColor="#fff"/>
 
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:padding="16dp"
+          android:orientation="horizontal">
 
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Don't have an account"
+              android:layout_marginLeft="80dp"
+              android:textColor="#000"
+              android:id="@+id/daccount"
+              android:textSize="15dp"/>
+
+          <TextView
+              android:id="@+id/newaccount"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Create One!"
+              android:textSize="15dp"
+              android:layout_marginLeft="5dp"
+              android:textColor="#0000FF"/>
+
+      </LinearLayout>
 
 
 
