@@ -63,7 +63,7 @@ public class CreateAccount extends AppCompatActivity {
                           String id = task.getResult().getUser().getUid();
                           database.getReference().child("Users").child(id).setValue(user);
 
-                          Intent intent = new Intent(CreateAccount.this, DashBoard.class);
+                          Intent intent = new Intent(CreateAccount.this, Dashboard.class);
                           startActivity(intent);
 
                       }

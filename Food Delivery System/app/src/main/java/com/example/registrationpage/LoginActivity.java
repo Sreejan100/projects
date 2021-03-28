@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         if(task.isSuccessful())
                         {
-                            Intent intent = new Intent(LoginActivity.this, DashBoard.class);
+                            Intent intent = new Intent(LoginActivity.this, Dashboard.class);
                             startActivity(intent);
                         }
                         else
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
        if(auth.getCurrentUser()!=null)
        {
-           Intent intent = new Intent(LoginActivity.this, DashBoard.class);
+           Intent intent = new Intent(LoginActivity.this, Dashboard.class);
            startActivity(intent);
        }
         
