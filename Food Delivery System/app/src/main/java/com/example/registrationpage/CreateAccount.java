@@ -2,6 +2,7 @@ package com.example.registrationpage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -26,7 +27,7 @@ public class CreateAccount extends AppCompatActivity {
     TextView mobile;
     ProgressDialog progressDialog;
     FirebaseDatabase database;
-    Button btn;
+    AppCompatButton btn;
     private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class CreateAccount extends AppCompatActivity {
         progressDialog.setTitle("Creating Account");
         progressDialog.setMessage("We are setting up your account");
         database = FirebaseDatabase.getInstance();
-        btn = (Button)findViewById(R.id.signup);
+        btn = (AppCompatButton)findViewById(R.id.signup);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

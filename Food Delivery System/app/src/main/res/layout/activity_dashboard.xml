@@ -162,9 +162,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
+                android:src="@drawable/ic_baseline_location_on_24"
                 app:backgroundTint="#ff6813"
                 app:layout_anchor="@id/bottomAppBar2"
-                android:src="@drawable/ic_baseline_location_on_24"
                 tools:ignore="VectorDrawableCompat" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -2,6 +2,7 @@ package com.example.registrationpage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
      TextView signup;
      TextView username;
      TextView password;
-     Button btn;
+     AppCompatButton btn;
      ProgressDialog progressDialog;
      private FirebaseAuth auth;
     @Override
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         username = (TextView)findViewById(R.id.username);
         password = (TextView)findViewById(R.id.password);
-        btn = (Button)findViewById(R.id.loginbutton);
+        btn = (AppCompatButton) findViewById(R.id.loginbutton);
         auth = FirebaseAuth.getInstance();
 
         progressDialog = new ProgressDialog(LoginActivity.this);
