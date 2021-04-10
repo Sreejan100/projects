@@ -4,25 +4,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.registrationpage.adapter.AsiaFoodAdapter;
 import com.example.registrationpage.adapter.PopularFoodAdapter;
 import com.example.registrationpage.model.AsiaFood;
 import com.example.registrationpage.model.PopularFood;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Dashboard extends AppCompatActivity {
 
     RecyclerView popularfood,asiaRecycler;
     PopularFoodAdapter popularFoodAdapter;
     AsiaFoodAdapter asiafoodadapter;
+    CircleImageView profilephoto;
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        auth = FirebaseAuth.getInstance();
+
+        profilephoto = (CircleImageView)findViewById(R.id.profilephoto);
+        profilephoto.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                 auth.signOut();
+                 Intent intent = new Intent(Dashboard.this,LoginActivity.class);
+                 startActivity(intent);
+            }
+        });
 
         List<PopularFood> popularFoodList = new ArrayList<>();
         popularFoodList.add(new PopularFood("Float Cake Vietnam","$7.05",R.drawable.popularfood1));
@@ -45,6 +63,8 @@ public class Dashboard extends AppCompatActivity {
 
         setPopularFoodAdapter(popularFoodList);
         setAsiafoodadapter(asiafoodlist);
+
+
     }
 
     private void setPopularFoodAdapter(List<PopularFood> popularFoodList){
